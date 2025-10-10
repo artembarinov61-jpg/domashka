@@ -3,11 +3,11 @@
 
 int main(){
     int a,b,c;
-    std::cout<< "ВВедите первое число:";
+    std::cout<< "Введите первое число:";
     std:: cin>> a;
-    std::cout<<"\nВВедите второе число:";
+    std::cout<<"\nВведите второе число:";
     std::cin>>b;
-    std::cout<<"\nВВедите третье число:";
+    std::cout<<"\nВведите третье число:";
     std::cin>>c;
     int max=(a>b && a>c) ? a : b>c ? b: c;
     std:: cout<< max << "\n";
