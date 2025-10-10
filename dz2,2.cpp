@@ -5,7 +5,7 @@
 int main(){
     setlocale(LC_CTYPE,"rus");
     //Zadanie 1
-    int a;
+    double a;
     std::cout<<"ВВедите число :"<<std::endl;
     std::cin>> a ;
     std::cout<< "Вы ввели :\n" << a << std::endl;
