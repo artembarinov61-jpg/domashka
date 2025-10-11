@@ -1,6 +1,6 @@
 #include<iostream>
 
-
+//zadanie 2
 int main(){
     int a,b,c;
     std::cout<< "Введите первое число:";
