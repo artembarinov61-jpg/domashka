@@ -1,5 +1,5 @@
 #include<iostream>
-
+//zadanie 1
 
 int main(){
     bool a=true,b=false;
