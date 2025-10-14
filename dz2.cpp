@@ -2,7 +2,7 @@
 #include<string>
 
 int main(){
-    std::string a;
+    double a;
     std::cout<<"Введите число:"<<std::endl;
     std::cin>> a ;
     std::cout<< "Вы ввели:\n" << a << std::endl;
