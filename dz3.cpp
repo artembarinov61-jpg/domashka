@@ -1,6 +1,6 @@
 #include<iostream>
 
-//zadanie 2
+
 int main(){
     int a,b,c;
     std::cout<< "Введите первое число:";
@@ -12,7 +12,7 @@ int main(){
     int max=(a>b && a>c) ? a : b>c ? b: c;
     std:: cout<< max << "\n";
     int min=(a<b && a<c)? a: b<c ? b : c;
-    int avg=((a>c&&a<b) || (a>b && a<c)) ? a: ((b>a && b<c) || (b>c && b<a))? b: c;
+    int avg=(((a>=c)&&(a<b)) || ((a>b) && (a<=c))) ? a: (((b>=a) && (b<c)) || ((b>c)&& (b<=a)))? b: c;
     std:: cout<< avg <<"\n" << min;
 
 
