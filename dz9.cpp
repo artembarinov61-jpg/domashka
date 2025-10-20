@@ -6,7 +6,10 @@ int main(){
     int siz;
     siz=sizeof(a)/sizeof(a[0]);
     for (int i=0;i<siz;i++){
-        std::cout<<a[i]<<", ";
+        if (i<9){
+            std::cout<<a[i]<<", ";
+        }
+        else std::cout<<a[i];
     }
 
 
