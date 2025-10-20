@@ -8,10 +8,10 @@ int main(){
         {7,8,9,10,11,12},
         {13,14,15,16,17,18}
     };
-    int i1,i2,i3,i4;
+    int i1=0,i2=0,i3=0,i4=0;
     int xmax1,xmin1;
     xmax1=a[0][0];
-    xmin1=100000;
+    xmin1=a[0][0];
     int rows,columns;
     rows=sizeof(a)/sizeof(a[0]);
     columns=sizeof(a[0])/sizeof(a[0][0]);
@@ -36,11 +36,5 @@ int main(){
     std::cout<<"\nИндекс минимального элемента: "<<i3<<" "<<i4;
     std::cout<<"\nИндекс максимального элемента: "<<i1<<" "<<i2;
 
-
-
-
-
-
-
-    return 0;
+return 0;
 }
