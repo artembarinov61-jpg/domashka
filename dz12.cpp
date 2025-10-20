@@ -3,7 +3,7 @@
 int main(){
     int a[]={10,12,4,5,2,75,33,76,15,6};
     int s,pr,g;
-    s=sizeof(a)/sizeof(a[0])-1;
+    s=sizeof(a)/sizeof(a[0]);
     std::cout<<"Массив до сортировки: ";
     for (int i=0;i<s;i++){
         std::cout<<a[i]<<" ";
