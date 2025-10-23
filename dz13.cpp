@@ -26,22 +26,20 @@ int main(int argc, char** argv)
 	return 0;
 }
 int sum(int a, int b){
-    int s;
-    s=a+b;
-    return s;
+    
+    return a+b;
 }
 
 int diff(int a,int b){
-    int d=a-b;
-    return d;
+    
+    return a-b;
 }
 int multiplication(int a, int b){
-    int m=a*b;
-    return m;
+    
+    return a*b;
 }
 double division(int a, int b){
-    double di=a/b;
-    return di;
+    return static_cast<double>(a)/b
 
 
 }
