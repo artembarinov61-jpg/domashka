@@ -2,13 +2,13 @@
 
 int main(){
     int a[]={10,12,4,5,2,75,33,76,15,6};
-    int s,pr,g;
+    int s,pr;
     s=sizeof(a)/sizeof(a[0]);
     std::cout<<"Массив до сортировки: ";
     for (int i=0;i<s;i++){
         std::cout<<a[i]<<" ";
     }
-    for (int i=s;i>=0;i--){
+    for (int i=s-1;i>=0;i--){
         for (int j=s-1;j>=0;j--){
             if (a[i]>a[j]){
                 pr=a[j];
