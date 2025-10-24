@@ -10,7 +10,7 @@ int main(int argc,char** argv){
     long c;
     std::cout<<"long: "<<&c<<" "<<sizeof(c)<<std::endl;
     long long d;
-    std::cout<<"long long: "<<&a<<" "<<sizeof(d)<<std::endl;
+    std::cout<<"long long: "<<&d<<" "<<sizeof(d)<<std::endl;
     float e;
     std::cout<<"float: "<<&e<<" "<<sizeof(e)<<std::endl;
     double f;
