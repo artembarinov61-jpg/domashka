@@ -1,7 +1,7 @@
 #include<iostream>
 void reverse(int *a){
     int n=9;
-    int b[n];
+    int b[9];
     for (int i=0;i<n;i++){
         b[i]=a[n-i-1];
         
