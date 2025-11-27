@@ -9,7 +9,7 @@ int main(int argc,char** argv){
     std::string size_mass;
     
     in>>size_mass;
-    int a=std::stoi(size_mass);
+    
     
     std::getline(in>>std::ws,str1);
         
