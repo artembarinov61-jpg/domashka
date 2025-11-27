@@ -16,7 +16,7 @@ int main(int argc,char** argv){
     
     int len=str1.length();
    
-    for (int i=0;i<=len;i++){
+    for (int i=0;i<len;i++){
         std::cout<<str1[len-i];
     }
 
