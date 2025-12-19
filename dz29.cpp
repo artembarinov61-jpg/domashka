@@ -4,22 +4,24 @@
 
 
 int main(int argc,char** argv){
-    std::ifstream in("//Users//artembarinov61icloud.com//Desktop//zxc//in.txt");
+    std::ifstream in("/Users/artembarinov61icloud.com/Desktop/zxc/in.txt");
     std::string str1;
+    int size_mass;
     
+    in>>size_mass;
+    int* A=new int[size_mass];
     
-    
-    
-    
-    std::getline(in>>std::ws,str1);
+    for (int i=0;i<size_mass;i++){
+        in>>A[i];
+    }
         
     
-    int len=str1.length();
+    
    
-    for (int i=0;i<len;i++){
-        std::cout<<str1[len-i-1];
+    for (int i=1;i<=size_mass;i++){
+        std::cout<<A[size_mass-i]<<" ";
     }
-
+    
 
 
 
