@@ -22,6 +22,8 @@ int main(int argc,char** argv){
         std::cout<<A[size_mass-i]<<" ";
     }
     
+    delete[] A;
+    
 
 
 
