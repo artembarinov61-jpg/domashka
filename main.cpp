@@ -21,6 +21,18 @@ int generation(){
     g++;
     return g;
 }
+bool flag(char** universe,char** universsrv,int rows,int cols){
+    bool flag1=false;
+    for (int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            if (universe[i][j]!=universsrv[i][j]){
+                flag1=true;
+                return flag1;
+            }
+        }
+    }
+    return flag1;
+}
 
 
 int alive_cels_last(char** universe,int i,int j,int rows,int cols){
@@ -241,6 +253,13 @@ int main(int argc, char** argv){
         
             
         }
+        
+        
+
+
+        
+
+
         while(!(main_file.eof())){
             int a,b;
             main_file>>a>>b;
@@ -249,18 +268,55 @@ int main(int argc, char** argv){
 
 
         }
-        std::string str2{};
-        std::string str1{};
+
+
+        if (prosmotr(universe,rows,cols)==0){
+            
+         for (int i=0;i<rows;i++){
+                for(int j=0;j<cols;j++){
+                    std::cout<<universe[i][j]<<" ";
+                }
+                std::cout<<"\n";
+            }
+            
+            std::cout<<"Generation: "<<1<< " ";
+            std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
+            std::cout<<"Game over.All cells are dead."<<std::endl;
+            for (int i=0;i<rows;i++){
+                delete universe[i];
+            }
+            delete[] universe;
+            for (int i=0;i<rows;i++){
+                delete universe1[i];
+            }
+            delete[] universe1;
+            return 0;
+        }
+        char** universesrv=new char*[rows];
+        for(int i=0;i<rows;i++){
+            universesrv[i]=new char[cols];
+
+        }
+
+
+
+       
         for (int i=0;i<rows;i++){
             for (int j=0;j<cols;j++){
-                std::cout<<universe[i][j]<<" ";
-                str1+=universe[i][j];
+                universesrv[i][j]=universe[i][j];
             }
-            std::cout<<"\n";
         }
-        std::cout<<"Generation: "<<1<< " ";
-        std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
-        
+
+
+         for (int i=0;i<rows;i++){
+                for(int j=0;j<cols;j++){
+                    std::cout<<universe[i][j]<<" ";
+                }
+                std::cout<<"\n";
+            }
+            
+            std::cout<<"Generation: "<<1<< " ";
+            std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
     
             
                     
@@ -282,22 +338,13 @@ int main(int argc, char** argv){
             std::cout<<"Generation: "<<generation()<< " ";
             std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
             std::cout<<"All cells are dead.Game over";
-            break;
+            
+            return 0;
+
+            
         }
         
-        if (str1==str2){
-            for (int i=0;i<rows;i++){
-                for(int j=0;j<cols;j++){
-                    std::cout<<universe[i][j]<<" ";
-                }
-                std::cout<<"\n";
-            }
-            
-            std::cout<<"Generation: "<<generation()<< " ";
-            std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
-            break;
-        }
-        str1=str2;
+        
         
         
 
@@ -315,7 +362,7 @@ int main(int argc, char** argv){
                         if ((koljivkl(universe,i,j,rows,cols))==3){
                             universe1[i][j]='1';
                         }else{
-                            universe[i][j]='0';
+                            universe1[i][j]='0';
                         }
                     }
                 }
@@ -327,7 +374,7 @@ int main(int argc, char** argv){
                     }else{
                         universe[i][j]='-';
                     }
-                    str2+=universe[i][j];
+                  
                 }
             }
             
@@ -336,8 +383,42 @@ int main(int argc, char** argv){
 
 
             
-            std::system("clear");
+            
+           
+            
+            if (!(flag(universe,universesrv,rows,cols))){
+                
+                for (int i=0;i<rows;i++){
+                for(int j=0;j<cols;j++){
+                    std::cout<<universe[i][j]<<" ";
+                }
+                std::cout<<"\n";
+            }
+            
+            std::cout<<"Generation: "<<generation()<< " ";
+            std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n"<<"The worlde froze";
+            
+            
+            break;
+            
+            }else if(prosmotr(universe,rows,cols)==0 ){
             for (int i=0;i<rows;i++){
+                for(int j=0;j<cols;j++){
+                    std::cout<<universe[i][j]<<" ";
+                }
+                std::cout<<"\n";
+            }
+            
+            std::cout<<"Generation: "<<generation()<< " ";
+            std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
+            std::cout<<"All cells are dead.Game over";
+            
+            break;
+
+                
+               
+            }else{
+                 for (int i=0;i<rows;i++){
                 for(int j=0;j<cols;j++){
                     std::cout<<universe[i][j]<<" ";
                 }
@@ -348,13 +429,38 @@ int main(int argc, char** argv){
             std::cout<<"Alive cells: "<<prosmotr(universe,rows,cols)<<"\n";
             sleep(1);
             
+            
+            for(int i=0;i<rows;i++){
+                for (int j=0;j<cols;j++){
+                    universesrv[i][j]=universe[i][j];
+                }
+            
+            }
 
+            }
+
+
+
+
+
+                
+            
             
 
         
-    } 
+    }
+    for(int i=0;i<rows;i++){
+        delete universe[i];
+        delete universe1[i];
+        delete universesrv[i];
+    }
+    delete[] universe;
+    delete[] universe1;
+    delete[] universesrv;
         
        
     }
+    main_file.close();
+    
     return 0;
 }
